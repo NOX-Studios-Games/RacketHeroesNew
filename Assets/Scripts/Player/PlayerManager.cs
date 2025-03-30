@@ -1,5 +1,5 @@
-using Characters;
 using Core.EventBus.Events;
+using RacketHeroes.Characters;
 using UnityEngine;
 
 namespace Player

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Characters
+namespace RacketHeroes.Characters
 {
     [CreateAssetMenu(menuName = "RacketHeroes/CharactersAttributes", fileName = "CharactersAttributes")]
     public class CharactersAttributesSO : ScriptableObject

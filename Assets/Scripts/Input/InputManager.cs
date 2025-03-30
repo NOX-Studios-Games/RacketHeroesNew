@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Input
+namespace RacketHeroes.InputManager
 {
     public class InputManager : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
     {
