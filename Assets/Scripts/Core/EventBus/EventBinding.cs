@@ -1,6 +1,7 @@
 using System;
+using RacketHeroes.Core.EventBus;
 
-namespace RacketHeroes.Core.EventBus
+namespace Core.EventBus
 {
     public class EventBinding<T> : IEventBinding<T> where T : IEvent
     {

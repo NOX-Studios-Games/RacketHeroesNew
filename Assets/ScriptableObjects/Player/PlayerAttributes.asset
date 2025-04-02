@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3bb84c4511df649822512e591f4b2f, type: 3}
   m_Name: PlayerAttributes
   m_EditorClassIdentifier: 
-  MovementSpeed: 10
-  SwingForce: 10
-  Damage: 10
-  CriticalRate: 0
-  Health: 100
-  Armor: 0
+  movementSpeed: 200
+  swingForce: 0
+  damage: 0
+  criticalRate: 0
+  health: 0
+  armor: 0

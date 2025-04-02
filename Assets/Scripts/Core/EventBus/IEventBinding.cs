@@ -1,6 +1,6 @@
 using System;
 
-namespace RacketHeroes.Core.EventBus
+namespace Core.EventBus
 {
     /// <summary>
     /// Interface que define um binding para eventos no Event Bus.

@@ -1,15 +1,15 @@
+using Characters;
+using Core.EventBus;
 using Core.EventBus.Events;
-using RacketHeroes.Characters;
 using UnityEngine;
 
 namespace Player
 {
-    [RequireComponent(typeof(PlayerMovement))]
     public class PlayerManager : MonoBehaviour
     {
         public CharactersAttributesSO attributes;
 
-        private void Awake() => SetUpAttributes();
+        private void Start() => SetUpAttributes();
 
         private void SetUpAttributes()
         {

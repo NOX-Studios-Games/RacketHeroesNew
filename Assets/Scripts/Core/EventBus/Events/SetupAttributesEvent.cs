@@ -2,7 +2,7 @@ using RacketHeroes.Core.EventBus;
 
 namespace Core.EventBus.Events
 {
-    public class SetupAttributesEvent : IEvent
+    public struct SetupAttributesEvent : IEvent
     {
         public readonly float MovementSpeed;
         public float SwingForce;
