@@ -1,5 +1,4 @@
 using System;
-using RacketHeroes.Core.EventBus;
 
 namespace Core.EventBus
 {

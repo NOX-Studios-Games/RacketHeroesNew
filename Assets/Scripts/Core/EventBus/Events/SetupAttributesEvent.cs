@@ -1,5 +1,3 @@
-using RacketHeroes.Core.EventBus;
-
 namespace Core.EventBus.Events
 {
     public struct SetupAttributesEvent : IEvent

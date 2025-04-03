@@ -1,11 +1,10 @@
-using Characters;
 using Core.EventBus;
 using Core.EventBus.Events;
 using UnityEngine;
 
-namespace Player
+namespace Characters
 {
-    public class PlayerManager : MonoBehaviour
+    public class CharacterManager : MonoBehaviour
     {
         public CharactersAttributesSO attributes;
 

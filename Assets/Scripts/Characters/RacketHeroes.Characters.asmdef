@@ -1,3 +1,4 @@
 {
-	"name": "RacketHeroes.Characters"
+	"name": "RacketHeroes.Characters",
+	"references":[ "GUID:8a495f1f311e40148bd5e8f65c557afb" ]
 }

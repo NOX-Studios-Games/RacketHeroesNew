@@ -7,7 +7,6 @@ namespace Core.Joystick
     public class FloatingJoystick : MonoBehaviour
     {
         [Header("Components")]
-        public Canvas canvas;
         public RectTransform rectTransform;
         public RectTransform knob;
         
@@ -50,6 +49,7 @@ namespace Core.Joystick
             var halfSize = joystickRadius;
             startPosition.x = Mathf.Clamp(startPosition.x, halfSize, Screen.width - halfSize);
             startPosition.y = Mathf.Clamp(startPosition.y, halfSize, Screen.height - halfSize);
+            
             return startPosition;
         }
 

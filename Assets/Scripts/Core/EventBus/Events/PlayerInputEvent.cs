@@ -1,4 +1,3 @@
-using RacketHeroes.Core.EventBus;
 using UnityEngine;
 
 namespace Core.EventBus.Events

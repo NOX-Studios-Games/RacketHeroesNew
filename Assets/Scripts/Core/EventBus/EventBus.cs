@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using RacketHeroes.Core.EventBus;
 using UnityEngine;
 
 namespace Core.EventBus

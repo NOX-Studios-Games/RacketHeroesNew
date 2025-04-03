@@ -1,4 +1,4 @@
-namespace RacketHeroes.Core.EventBus
+namespace Core.EventBus
 {
     public interface IEvent { }
 }
