@@ -6,9 +6,6 @@ namespace Core.EventBus.Events
     {
         public Vector2 MovementInput { get; }
 
-        public PlayerInputEvent(Vector2 movementInput)
-        {
-            MovementInput = movementInput;
-        }
+        public PlayerInputEvent(Vector2 movementInput) => MovementInput = movementInput;
     }
 }
