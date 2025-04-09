@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Core.StateMachine.Base
 {
-    public class CharacterGameStateMachine : GameStateMachine
+    public class CharacterStateMachine : StateMachine
     {
         [SerializeField] private Animator animator;
 
@@ -10,7 +10,10 @@ namespace Core.StateMachine.Base
         {
             foreach (var stateData in stateDataList)
             {
-                stateData.CreateCharacterState(animator);
+                var state = stateData.CreateCharacterState(animator);
+                
+                if (state == null) continue;
+                StateDictionary.TryAdd(stateData, state);
             }
         }
     }

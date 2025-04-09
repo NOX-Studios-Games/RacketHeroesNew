@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Core.StateMachine.StateDatas
 {
-    [CreateAssetMenu(fileName = "IdleStateData", menuName = "GameStateMachine/IdleStateData")]
+    [CreateAssetMenu(fileName = "IdleStateData", menuName = "StateMachine/IdleStateData")]
     public class IdleStateData : StateData
     {
         public override BaseState CreateCharacterState(Animator animator) 
