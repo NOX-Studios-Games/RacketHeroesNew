@@ -13,6 +13,7 @@ namespace Player
         [SerializeField] private PlayerMovement playerMovement;
         [SerializeField] private FloatingJoystick joystick;
         private Finger _movementFinger;
+        public AudioClip sfxPlayerAttack;
 
         private void OnEnable()
         {
@@ -38,13 +39,14 @@ namespace Player
             joystick.ShowJoystick(touchedFinger.screenPosition);
         }
 
-        private void HandleFingerUp(Finger lostFinger)
+        private void HandleFingerUp(Finger lostFinger) 
         {
             if (lostFinger != _movementFinger) return;
 
             _movementFinger = null;
             joystick.HideJoystick();
             EventBus<PlayerInputEvent>.Publish(new PlayerInputEvent(Vector2.zero));
+            EventBus<PlayerAttackEvent>.Publish(new PlayerAttackEvent(sfxPlayerAttack));
         }
         
         private void HandleFingerMove(Finger movedFinger)

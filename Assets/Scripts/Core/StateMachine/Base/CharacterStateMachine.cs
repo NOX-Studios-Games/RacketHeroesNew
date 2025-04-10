@@ -10,10 +10,10 @@ namespace Core.StateMachine.Base
         {
             foreach (var stateData in stateDataList)
             {
-                var state = stateData.CreateCharacterState(animator);
+                //var state = stateData.CreateCharacterState(animator);
                 
-                if (state == null) continue;
-                StateDictionary.TryAdd(stateData, state);
+                //if (state == null) continue;
+                //StateDictionary.TryAdd(stateData, state);
             }
         }
     }
