@@ -1,33 +1,61 @@
+using System.Collections.Generic;
 using Core.EventBus;
-using Core.EventBus.Events;
 using UnityEngine;
 
-namespace Core.Audio {
-    public class AudioEventHandler : MonoBehaviour {
-        //Lista de Bidings
-        private EventBinding<PlayerAttackEvent> _playerAttackBiding;
+namespace Core.Audio 
+{
+    public class AudioEventHandler : MonoBehaviour 
+    {
+        public List<AudioClipData> audioClips;
+        private readonly Dictionary<SfxId, AudioClip> _audioClipDictionary = new ();
+        
+        private EventBinding<PlaySfxEvent> _playerAttackBinding;
+
+        private void Awake() => PopulateAudioClipDictionary();
 
         private void OnEnable() {
-            _playerAttackBiding = new EventBinding<PlayerAttackEvent>(PlaySFX);
-            EventBus<PlayerAttackEvent>.Register(_playerAttackBiding);
+            _playerAttackBinding = new EventBinding<PlaySfxEvent>(PlaySfx);
+            EventBus<PlaySfxEvent>.Register(_playerAttackBinding);
         }
 
-        private void OnDisable() {
-            EventBus<PlayerAttackEvent>.Unregister(_playerAttackBiding);
+        private void OnDisable() => EventBus<PlaySfxEvent>.Unregister(_playerAttackBinding);
+
+        private void PlaySfx(PlaySfxEvent eventData)
+        {
+            if(_audioClipDictionary.TryGetValue(eventData.SfxId, out var audioClip))
+            {
+                AudioManager.Instance.PlaySfx(audioClip);
+            }
         }
 
-        //Função de tocar SFX
-        public void PlaySFX(PlayerAttackEvent eventData) {
-            AudioManager.Instance.PlaySFX(eventData.audioClip);
-        }
-        //Função de tocar BGM
-        public void PlayBGM(PlayerAttackEvent eventData) {
-            AudioManager.Instance.PlayAudio(eventData.audioClip);
-        }
-        //Função de parar BGM
-        public void StopBGM() {
-            AudioManager.Instance.StopAudio();
+        public void PlayBGM(PlaySfxEvent eventData)
+        {
+            //AudioManager.Instance.PlayAudio();
         }
 
-}
+        public void StopBGM() => AudioManager.Instance.StopAudio();
+        
+        private void PopulateAudioClipDictionary()
+        {
+            foreach (var audioClip in audioClips)
+            {
+                if (_audioClipDictionary.ContainsKey(audioClip.sfxId)) continue;
+                _audioClipDictionary[audioClip.sfxId] = audioClip.clip;
+            }
+        }
+    }
+    
+    public enum SfxId
+    {
+        Idle,
+        Walking,
+        Attacking
+    }
+    
+    [System.Serializable]
+    public struct AudioClipData
+    {
+        public AudioClip clip;
+        public SfxId sfxId;
+    }
 }
