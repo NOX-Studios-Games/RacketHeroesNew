@@ -9,16 +9,16 @@ namespace Core.Audio
         public List<AudioClipData> audioClips;
         private readonly Dictionary<SfxId, AudioClip> _audioClipDictionary = new ();
         
-        private EventBinding<PlaySfxEvent> _playerAttackBinding;
+        private EventBinding<PlaySfxEvent> _playSfxBinding;
 
         private void Awake() => PopulateAudioClipDictionary();
 
         private void OnEnable() {
-            _playerAttackBinding = new EventBinding<PlaySfxEvent>(PlaySfx);
-            EventBus<PlaySfxEvent>.Register(_playerAttackBinding);
+            _playSfxBinding = new EventBinding<PlaySfxEvent>(PlaySfx);
+            EventBus<PlaySfxEvent>.Register(_playSfxBinding);
         }
 
-        private void OnDisable() => EventBus<PlaySfxEvent>.Unregister(_playerAttackBinding);
+        private void OnDisable() => EventBus<PlaySfxEvent>.Unregister(_playSfxBinding);
 
         private void PlaySfx(PlaySfxEvent eventData)
         {
@@ -47,9 +47,10 @@ namespace Core.Audio
     
     public enum SfxId
     {
-        Idle,
         Walking,
-        Attacking
+        Attacking,
+        TakingDamage,
+        Dying
     }
     
     [System.Serializable]
