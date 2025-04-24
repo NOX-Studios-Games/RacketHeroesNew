@@ -26,11 +26,12 @@ namespace Core.Audio
         [Header("Window")]
         public GameObject settingsPanel;
 
-        private void Awake() {
+        private void Awake() 
+        {
             // Garante que apenas um AudioManager exista no jogo
             if (Instance == null) {
                 Instance = this;
-                DontDestroyOnLoad(gameObject); // Mant�m o AudioManager entre cenas
+                DontDestroyOnLoad(gameObject); // Mantem o AudioManager entre cenas
             } else {
                 Destroy(gameObject);
             }
@@ -38,7 +39,8 @@ namespace Core.Audio
             LoadVolumes();
         }
 
-        public void PlayAudio(AudioClip clip, bool loop = false) {
+        public void PlayAudio(AudioClip clip, bool loop = false) 
+        {
             if (bgmAudioSource == null || clip == null) return;
             if (bgmAudioSource.isPlaying && bgmAudioSource.clip == clip) return;
 
@@ -47,40 +49,46 @@ namespace Core.Audio
             bgmAudioSource.Play();
         }
 
-        public void StopAudio() {
+        public void StopAudio() 
+        {
             if (bgmAudioSource.isPlaying) {
                 bgmAudioSource.Stop();
             }
         }
 
-        public void PlaySfx(AudioClip clip) {
+        public void PlaySfx(AudioClip clip) 
+        {
             if (sfxAudioSource == null || clip == null) return;
 
             sfxAudioSource.PlayOneShot(clip);
         }
 
-        public void ChangeMasterVolume(float volume) {
+        public void ChangeMasterVolume(float volume) 
+        {
             masterText.text = "Master - " + (volume*100).ToString("F0");
 
             mixer.SetFloat("Master Volume", Mathf.Log10(volume) * 20);
             PlayerPrefs.SetFloat("Master Volume", volume);
         }
 
-        public void ChangeBGMVolume(float volume) {
+        public void ChangeBGMVolume(float volume) 
+        {
             bgmText.text = "BGM - " + (volume * 100).ToString("F0");
 
             mixer.SetFloat("BGM Volume", Mathf.Log10(volume) * 20);
             PlayerPrefs.SetFloat("BGM Volume", volume);
         }
 
-        public void ChangeSfxVolume(float volume) {
+        public void ChangeSfxVolume(float volume) 
+        {
             sfxText.text = "SFX - " + (volume * 100).ToString("F0");
 
             mixer.SetFloat("SFX Volume", Mathf.Log10(volume) * 20);
             PlayerPrefs.SetFloat("SFX Volume", volume);
         }
 
-        public void LoadVolumes() {
+        public void LoadVolumes() 
+        {
             masterSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat("Master Volume", 0.5f));
             ChangeMasterVolume(masterSlider.value);
             bgmSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat("BGM Volume", 0.5f));
@@ -89,13 +97,8 @@ namespace Core.Audio
             ChangeSfxVolume(sfxSlider.value);
         }
 
-        public void OpenAudioSettings() {
-            settingsPanel.SetActive(true);
-        }
+        public void OpenAudioSettings() => settingsPanel.SetActive(true);
 
-        public void CloseAudioSettings() {
-            settingsPanel.SetActive(false);
-        }
-
+        public void CloseAudioSettings() => settingsPanel.SetActive(false);
     }
 }

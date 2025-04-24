@@ -205,6 +205,117 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -45.4}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &47323626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 47323627}
+  - component: {fileID: 47323632}
+  - component: {fileID: 47323631}
+  - component: {fileID: 47323630}
+  - component: {fileID: 47323629}
+  - component: {fileID: 47323628}
+  m_Layer: 0
+  m_Name: StateMachine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &47323627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47323626}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 547497501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &47323628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47323626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0862291f787144ab9e2f42c83f033035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myStateMachine: {fileID: 0}
+  animationClip: {fileID: -203655887218126122, guid: bfdf26a7af6fb4040a33fd4a1ad177de, type: 3}
+--- !u!114 &47323629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47323626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc871823bd4547a28a8c8ae5fd9ae89d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myStateMachine: {fileID: 0}
+  animationClip: {fileID: -203655887218126122, guid: 64f028c35a59b0246a564ef5fc12f34d, type: 3}
+--- !u!114 &47323630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47323626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce441898a884eed8990c24bbfe2517c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myStateMachine: {fileID: 0}
+  animationClip: {fileID: -203655887218126122, guid: fbc7144702fbbf44b918b24c29c20883, type: 3}
+--- !u!114 &47323631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47323626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0155585b311f48159e1191eb7a374894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachine: {fileID: 47323632}
+  stateMapList:
+  - stateId: 0
+    stateInstance: {fileID: 47323630}
+  - stateId: 1
+    stateInstance: {fileID: 47323629}
+  - stateId: 2
+    stateInstance: {fileID: 47323628}
+--- !u!114 &47323632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47323626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4870515a27d84a3f82cbab042846d5a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAnimator: {fileID: 831199107}
 --- !u!1 &151643143
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,9 +799,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7050192131168005563, guid: 2c95a2a8c4a27214ab8d37d3c1568f4b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7223907633847962541, guid: 2c95a2a8c4a27214ab8d37d3c1568f4b, type: 3}
       propertyPath: m_Name
       value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223907633847962541, guid: 2c95a2a8c4a27214ab8d37d3c1568f4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -708,11 +827,10 @@ GameObject:
   - component: {fileID: 547497501}
   - component: {fileID: 547497498}
   - component: {fileID: 547497505}
-  - component: {fileID: 547497502}
   - component: {fileID: 547497508}
   - component: {fileID: 547497507}
+  - component: {fileID: 547497502}
   - component: {fileID: 547497506}
-  - component: {fileID: 547497509}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -756,6 +874,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 47323627}
   - {fileID: 347386206}
   - {fileID: 2020960376}
   m_Father: {fileID: 0}
@@ -839,21 +958,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 547497506}
   joystick: {fileID: 151643145}
---- !u!114 &547497509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547497497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4870515a27d84a3f82cbab042846d5a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateDataList:
-  - {fileID: 0}
-  animator: {fileID: 831199107}
 --- !u!1 &625564548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2431,7 +2535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1656730048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2446,7 +2550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingsPanel: {fileID: 744273465}
   vibrationToggle: {fileID: 1304173297}
-  screenShakeToggle: {fileID: 26914696}
+  screenshakeToggle: {fileID: 26914696}
 --- !u!114 &1656730049
 MonoBehaviour:
   m_ObjectHideFlags: 0

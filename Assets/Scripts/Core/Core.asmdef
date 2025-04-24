@@ -1,13 +1,8 @@
 {
-    "name": "RacketHeroes.Player",
+    "name": "Core",
     "rootNamespace": "",
     "references": [
-        "GUID:1f48bc20f413f5f4ba986e4c9c9b369a",
-        "GUID:8a495f1f311e40148bd5e8f65c557afb",
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:375c665a9b285a741b2b103a0bd788b5",
-        "GUID:6ab8d9293cf04de696d4971c8d2336f3",
-        "Core"
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

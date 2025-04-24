@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Core.EventBus;
+using Core.EventBus.Events.Audio;
 using UnityEngine;
 
 namespace Core.Audio 

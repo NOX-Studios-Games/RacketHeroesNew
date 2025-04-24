@@ -1,5 +1,6 @@
+using Characters;
 using Core.EventBus;
-using Core.EventBus.Events;
+using Core.EventBus.Events.Player;
 using UnityEngine;
 
 namespace Player

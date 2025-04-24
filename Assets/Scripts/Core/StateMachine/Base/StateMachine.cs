@@ -1,44 +1,21 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core.StateMachine.Base
 {
     public class StateMachine : MonoBehaviour
     {
-        [SerializeField] protected List<StateData> stateDataList;
-        protected readonly Dictionary<StateData, IState> StateDictionary = new();
-        protected IState CurrentState;
-
-        protected virtual void Awake() => SetupStates();
+        private IState _currentState;
         
-        protected virtual void SetupStates()
-        {
-            StateDictionary.Clear();
-            
-            foreach (var stateData in stateDataList)
-            {
-                if(stateData == null) continue;
-                
-                var state = stateData.CreateGameState();
-                if (state == null) continue;
-                
-                StateDictionary.TryAdd(stateData, state);
-            }
-        }
-
-        protected virtual void Update() => CurrentState?.OnUpdate();
-        protected virtual void FixedUpdate() => CurrentState?.OnFixedUpdate();
+        protected virtual void Update() => _currentState?.OnUpdate();
+        protected virtual void FixedUpdate() => _currentState?.OnFixedUpdate();
         
-        public virtual void SetState(StateData stateData)
+        public void SetState(IState newState)
         {
-            if(stateData == null 
-               || !StateDictionary.TryGetValue(stateData, out var newState)) return;
+            if(newState == null || _currentState == newState) return;
             
-            if(CurrentState == newState) return;
-            
-            CurrentState?.OnExit();
-            CurrentState = newState;
-            CurrentState.OnEnter();
+            _currentState?.OnExit();
+            _currentState = newState;
+            _currentState.OnEnter();
         }
     }
 }

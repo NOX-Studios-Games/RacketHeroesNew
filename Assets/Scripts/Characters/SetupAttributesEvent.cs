@@ -1,4 +1,6 @@
-namespace Core.EventBus.Events
+using Core.EventBus;
+
+namespace Characters
 {
     public struct SetupAttributesEvent : IEvent
     {

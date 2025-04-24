@@ -1,5 +1,5 @@
 using Core.EventBus;
-using Core.EventBus.Events;
+using Core.EventBus.Events.Player;
 using Core.Joystick;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;

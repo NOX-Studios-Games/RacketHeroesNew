@@ -1,5 +1,4 @@
 using Core.EventBus;
-using Core.EventBus.Events;
 using UnityEngine;
 
 namespace Characters
