@@ -1,4 +1,4 @@
-namespace Core.BehaviourTree.Nodes
+namespace Core.BehaviourTree
 {
     public class Sequence : Node
     {

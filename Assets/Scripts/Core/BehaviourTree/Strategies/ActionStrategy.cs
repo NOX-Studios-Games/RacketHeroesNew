@@ -14,9 +14,6 @@ namespace Core.BehaviourTree.Strategies
             return Node.Status.Success;
         }
 
-        public void Reset()
-        {
-            throw new NotImplementedException();
-        }
+        public void Reset() => throw new NotImplementedException();
     }
 }

@@ -10,9 +10,6 @@ namespace Core.BehaviourTree.Strategies
 
         public Node.Status Process() => _predicate() ? Node.Status.Success : Node.Status.Failure;
 
-        public void Reset()
-        {
-            throw new System.NotImplementedException();
-        }
+        public void Reset() => throw new NotImplementedException();
     }
 }

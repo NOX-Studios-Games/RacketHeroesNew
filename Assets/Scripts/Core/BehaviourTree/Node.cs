@@ -19,8 +19,8 @@ namespace Core.BehaviourTree
         }
 
         public virtual Status Process() => ChildrenList[CurrentChild].Process();
-        
-        public virtual void Reset()
+
+        protected virtual void Reset()
         {
             CurrentChild = 0;
             foreach (var child in ChildrenList) child.Reset();
