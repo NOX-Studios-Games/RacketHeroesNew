@@ -2,7 +2,7 @@ namespace Core.BehaviourTree
 {
     public class Sequence : Node
     {
-        public Sequence(string name) : base(name) { }
+        public Sequence(string name, int priority = 0) : base(name, priority) { }
 
         public override Status Process()
         {

@@ -7,11 +7,17 @@ namespace Core.BehaviourTree
         public enum Status { Running, Success, Failure }
 
         public readonly string Name;
+        public readonly int Priority;
+        
         protected readonly List<Node> ChildrenList = new();
         protected int CurrentChild;
 
-        protected Node(string name = "Node") => Name = name;
-        
+        protected Node(string name = "Node", int priority = 0)
+        {
+            Name = name;
+            Priority = priority;
+        }
+
         public virtual void AddChild(Node child)
         {
             if (child == null) return;

@@ -2,7 +2,7 @@ namespace Core.BehaviourTree
 {
     public class Selector : Node
     {
-        public Selector(string name) : base(name) { }
+        protected Selector(string name, int priority = 0) : base(name, priority) { }
 
         public override Status Process()
         {

@@ -4,7 +4,7 @@ namespace Core.BehaviourTree
     {
         private readonly IStrategy _strategy;
 
-        public Leaf(string name, IStrategy strategy) : base(name) => _strategy = strategy;
+        public Leaf(string name, IStrategy strategy, int priority = 0) : base(name, priority) => _strategy = strategy;
 
         public override Status Process() => _strategy.Process();
         protected override void Reset() => _strategy.Reset();
