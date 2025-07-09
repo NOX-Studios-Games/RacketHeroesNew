@@ -13,7 +13,7 @@ namespace Core.BehaviourTree
 
         protected PrioritySelector(string name) : base(name) { }
 
-        protected override void Reset()
+        protected internal override void Reset()
         {
             base.Reset();
             _sortedChildren = null;

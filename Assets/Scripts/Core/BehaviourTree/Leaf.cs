@@ -7,6 +7,6 @@ namespace Core.BehaviourTree
         public Leaf(string name, IStrategy strategy, int priority = 0) : base(name, priority) => _strategy = strategy;
 
         public override Status Process() => _strategy.Process();
-        protected override void Reset() => _strategy.Reset();
+        protected internal override void Reset() => _strategy.Reset();
     }
 }
